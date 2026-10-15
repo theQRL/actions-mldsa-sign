@@ -39,7 +39,7 @@ inputs:
     default: ''
 runs:
   using: docker
-  image: docker://ghcr.io/theqrl/actions-mldsa-sign:v2.0.0
+  image: docker://ghcr.io/theqrl/actions-mldsa-sign:v3.0.0
   args:
     - ${{ inputs.hexseed }}
     - ${{ inputs.context }}

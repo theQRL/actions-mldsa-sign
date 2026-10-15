@@ -8,7 +8,7 @@ This action supersedes [actions-dilithium-sign](https://github.com/theQRL/action
 ## Usage
 
 ```yaml
-- uses: theQRL/actions-mldsa-sign@v2
+- uses: theQRL/actions-mldsa-sign@v3
   with:
     patterns: |
       dist/*.zip
@@ -127,7 +127,7 @@ jobs:
         run: make build
 
       - name: Sign artifacts with ML-DSA
-        uses: theQRL/actions-mldsa-sign@v2
+        uses: theQRL/actions-mldsa-sign@v3
         with:
           patterns: |
             dist/*.zip
@@ -228,7 +228,7 @@ It builds the qrlft commit the Dockerfile pins, so it needs Go and `jq`; set
 
 Three changes when switching a workflow from `actions-dilithium-sign@v2`:
 
-1. `uses: theQRL/actions-mldsa-sign@v2` (or pin the commit SHA)
+1. `uses: theQRL/actions-mldsa-sign@v3` (or pin the commit SHA)
 2. Add the new required `context` input and pick a stable, application-specific value — verifiers must use the same string forever after
 3. The `hexseed` secret must be a **fresh ML-DSA hexseed** (generate one as below). Dilithium and ML-DSA-87 seeds are both 32 bytes, so an old Dilithium hexseed is accepted and expanded into a different ML-DSA key, producing signatures that fail against the published public key. Generate a new keypair and publish its public key
 
