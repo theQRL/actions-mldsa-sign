@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.25'
       # Builds the qrlft commit the Dockerfile pins, so the test signs with the
       # same code the published image does.
       - run: ./test/run.sh
